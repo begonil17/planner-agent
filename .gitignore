@@ -1,0 +1,25 @@
+# Environment variables
+.env
+
+# Runtime-generated files
+calendar.db
+calendar.html
+calendar_data.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
