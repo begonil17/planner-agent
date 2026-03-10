@@ -59,9 +59,6 @@ python agents.py
 This project was implemented following OpenAI’s agent documentation:
 - [A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)
 - [OpenAI Python Agents Quickstart](https://openai.github.io/openai-agents-python/quickstart/)
-
-## License
-
-This project is licensed under the MIT License.
+  
 
 > Note: This project uses external APIs (OpenAI, Tavily). You must obtain your own API keys and comply with their respective terms of service.
