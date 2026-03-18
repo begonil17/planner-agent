@@ -16,8 +16,47 @@ Together, these agents form a **planner system** that can assess student goals, 
 - **Context-Aware Assistance**: The assistant can use background information about the student to provide more tailored advice.  
 - **Official Web Search**: The searcher agent retrieves information from university websites or general sources depending on the query.  
 - **Automated Planning**: Generates structured plans and roadmaps considering the current date.  
-- **Calendar Integration**: Adds approved plans to a `calendar.html` file, which can be viewed directly in a browser.  
+- **Calendar Integration**: Adds approved plans to a `calendar.html` file, which can be viewed directly in a browser.
+  
+---
 
+## Multi-Agent Planner Workflow
+
+```mermaid
+flowchart TD
+    U(["User"]):::user
+    U -->|"Natural language query"| A
+    subgraph ASSISTANT["Assistant Agent"]
+        A["Receive & understand\nuser query"]:::agent
+        A --> D{{"Needs external\ninfo?"}}:::decision
+        D -->|Yes| SR["Delegate to\nSearcher Agent"]:::handoff
+        D -->|No| PL["Delegate to\nPlanner Agent"]:::handoff
+        PR["Present plan\nto user"]:::agent
+    end
+    subgraph SEARCHER["Searcher Agent"]
+        SR --> WS["Web search\n(official sites first)"]:::tool
+        WS --> WS2["Broaden to\nother sources"]:::tool
+        WS2 --> RF["Return findings\nto Assistant"]:::handoff
+    end
+    RF --> PL
+    subgraph PLANNER["Planner Agent"]
+        PL --> RP["Generate structured\nroadmap / plan"]:::output
+    end
+    RP --> PR
+    PR --> CF{{"User\nconfirms?"}}:::decision
+    CF -->|"No — revise"| A
+    CF -->|"Yes"| CAL["Export to\nHTML Calendar"]:::final
+    classDef user fill:#EEEDFE,stroke:#534AB7,stroke-width:1px,color:#3C3489
+    classDef agent fill:#E1F5EE,stroke:#0F6E56,stroke-width:1px,color:#085041
+    classDef decision fill:#FAEEDA,stroke:#BA7517,stroke-width:1px,color:#633806
+    classDef tool fill:#E6F1FB,stroke:#185FA5,stroke-width:1px,color:#0C447C
+    classDef handoff fill:#F1EFE8,stroke:#5F5E5A,stroke-width:1px,color:#2C2C2A
+    classDef output fill:#EAF3DE,stroke:#3B6D11,stroke-width:1px,color:#27500A
+    classDef final fill:#EEEDFE,stroke:#534AB7,stroke-width:2px,color:#26215C
+    style ASSISTANT fill:#E1F5EE22,stroke:#0F6E56,stroke-width:1.5px,color:#085041
+    style SEARCHER fill:#E6F1FB22,stroke:#185FA5,stroke-width:1.5px,color:#0C447C
+    style PLANNER fill:#EAF3DE22,stroke:#3B6D11,stroke-width:1.5px,color:#27500A
+```
 ---
 
 ## Getting Started
