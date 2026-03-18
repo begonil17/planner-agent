@@ -18,7 +18,6 @@ Together, these agents form a **planner system** that can assess student goals, 
 - **Automated Planning**: Generates structured plans and roadmaps considering the current date.  
 - **Calendar Integration**: Adds approved plans to a `calendar.html` file, which can be viewed directly in a browser.
   
----
 
 ## Multi-Agent Planner Workflow
 
@@ -57,6 +56,8 @@ flowchart TD
     style SEARCHER fill:#E6F1FB22,stroke:#185FA5,stroke-width:1.5px,color:#0C447C
     style PLANNER fill:#EAF3DE22,stroke:#3B6D11,stroke-width:1.5px,color:#27500A
 ```
+See the [system flowchart](./docs/FLOWCHART.md) for a detailed workflow diagram.
+
 ---
 
 ## Getting Started
