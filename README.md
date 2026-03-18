@@ -56,7 +56,7 @@ flowchart TD
     style SEARCHER fill:#E6F1FB22,stroke:#185FA5,stroke-width:1.5px,color:#0C447C
     style PLANNER fill:#EAF3DE22,stroke:#3B6D11,stroke-width:1.5px,color:#27500A
 ```
-See the [system flowchart](./docs/FLOWCHART.md) for a detailed workflow diagram.
+See the [system flowchart](./docs/system_workflow_chart.md) for a detailed workflow diagram.
 
 ---
 
